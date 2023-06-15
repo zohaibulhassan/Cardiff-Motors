@@ -418,8 +418,8 @@ Route::name('user.')->prefix('user')->group(function () {
     });
 });
 
-Route::get('/contact', 'SiteController@contact')->name('contact');
-Route::post('/contact', 'SiteController@contactSubmit');
+Route::post('/contact', 'SiteController@contact')->name('contact');
+
 Route::get('/change/{lang?}', 'SiteController@changeLanguage')->name('lang');
 Route::get('page/{id}/{slug}', 'SiteController@pageDetails')->name('page.details');
 
@@ -432,7 +432,8 @@ Route::get('/{slug}', 'SiteController@pages')->name('pages');
 
 Route::get('/', 'SiteController@index')->name('home');
 Route::post('/fetchModels', 'SiteController@fetchModels')->name('fetchModels');
-Route::get('/searchModels', 'SiteController@searchModels')->name('searchModels');
+Route::post('/searchModels', 'SiteController@searchModels')->name('searchModels');
+Route::post('/as', 'SiteController@as')->name('as');
 
 
 

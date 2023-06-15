@@ -28,8 +28,7 @@ class SiteController extends Controller
     }
 
     public function index()
-    {
-        
+    {        
         $pageTitle = 'Home';
         $brands = Brand::all();
         $categories = Category::all();
@@ -43,7 +42,19 @@ class SiteController extends Controller
     }
 
 
+
     public function searchModels(Request $request){
+        $pageTitle = "Contact Us";
+        return view($this->activeTemplate . 'products', compact('pageTitle'));
+        // $brand = $request->input('make');
+        // $category =  $request->input('model');
+        // $price = $request->input('price');
+
+        // Brand::where('id', $brand)
+    }
+    public function as(){
+        echo "Test"; 
+        exit;
         // $brand = $request->input('make');
         // $category =  $request->input('model');
         // $price = $request->input('price');
@@ -60,9 +71,11 @@ class SiteController extends Controller
     }
 
     public function contact()
-    {
-        $pageTitle = "Contact Us";
-        return view($this->activeTemplate . 'contact', compact('pageTitle'));
+    {        
+        $brands = Brand::all();
+        $categories = Category::all();       
+        $pageTitle = "Products";
+        return view($this->activeTemplate . 'products', compact('pageTitle','brands','categories'));
     }
 
     public function contactSubmit(Request $request)
