@@ -22,8 +22,8 @@
     <link rel="shortcut icon" href="{{ getImage(imagePath()['logoIcon']['path'] . '/favicon.png', '?' . time()) }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset($activeTemplateTrue . 'css/color.php') }}?color={{ $general->base_color }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=K2D:wght@600;700&family=Montagu+Slab:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     @stack('style-lib')
 
     @stack('style')
@@ -157,6 +157,78 @@
                 },
                 1000:{
                     items:2
+                }
+            }
+        })
+    </script>
+    <script>
+        $(".products .list").hide();
+        $(".fa-list").click(function(){
+            $(".products .grid").hide();
+            $(".products .list").show();
+            $(".fa-list").addClass('active');
+            $(".fa-th").removeClass('active');
+        });
+        $(".fa-th").click(function(){
+            $(".products .list").hide();
+            $(".products .grid").show();
+            $(".fa-th").addClass('active');
+            $(".fa-list").removeClass('active');
+        });
+    </script>
+    <script>
+        $('.slider').owlCarousel({
+            loop:true,
+            margin:10,
+            items:1,
+            dots:false,
+            URLhashListener:true
+        })
+        $('.slider2').owlCarousel({
+            loop:true,
+            margin:10,
+            nav:true,
+            items:4,
+            dots:false,
+            center: true,
+            URLhashListener:true
+        })
+    </script>
+    <script>
+        $('#products').owlCarousel({
+            loop:true,
+            margin:10,
+            dots:true,
+            autoplay:true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:5
+                }
+            }
+        })
+    </script>
+    <script>
+        $('#brands').owlCarousel({
+            loop:true,
+            margin:20,
+            nav:false,
+            dots:false,
+            autoplay:true,
+            responsive:{
+                0:{
+                    items:3
+                },
+                600:{
+                    items:4
+                },
+                1000:{
+                    items:6
                 }
             }
         })

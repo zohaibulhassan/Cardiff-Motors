@@ -427,13 +427,13 @@ Route::get('/cookie/accept', 'SiteController@cookieAccept')->name('cookie.accept
 
 Route::get('placeholder-image/{size}', 'SiteController@placeholderImage')->name('placeholder.image');
 
-Route::get('/{slug}', 'SiteController@pages')->name('pages');
+// Route::get('/{slug}', 'SiteController@pages')->name('pages');
 
 
 Route::get('/', 'SiteController@index')->name('home');
 Route::post('/fetchModels', 'SiteController@fetchModels')->name('fetchModels');
 Route::post('/searchModels', 'SiteController@searchModels')->name('searchModels');
-Route::post('/as', 'SiteController@as')->name('as');
+Route::get('/productdetails', 'SiteController@details')->name('details');
 
 
 

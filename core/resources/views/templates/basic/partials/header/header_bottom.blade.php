@@ -1,7 +1,7 @@
 <div class="header-bottom bg--section py-2">
     <div class="container">
         <div class="row">
-            <div class="col-xxl-3 col-xl-3 p-rel">
+            <div class="col-xxl-2 col-xl-2 p-rel">
                 <div class="logo">
                     <a href="{{ route('home') }}">
                         <img src="{{ asset('assets/images/logo.png') }}" alt="@lang('logo')">
@@ -36,15 +36,34 @@
                             Reviews
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('contact') }}" class="{{ menuActive('contact') }}">
+                            Contact
+                        </a>
+                    </li>
                 </ul>
             </div>
-            <div class="col-xxl-3 col-xl-3">
-                <form action="{{ route('products') }}" method="GET" class="search-form d-none d-lg-block">
-                    <div class="input-group search--group">
-                        <button class="cmn--btn" type="submit"><i class="fas fa-search"></i></button>
-                        <input type="text" class="form-control" name="search" placeholder="@lang('Search here')" value="{{ request()->search ?? null }}">                        
-                    </div>
-                </form>
+            <div class="col-xxl-2 col-xl-2">
+                <div class="rating">
+                    <a href="{{ route('home') }}">
+                        <img src="{{ asset('assets/images/autotrader.png') }}" alt="">
+                        <!-- <h1>Cardiff Motors</h1> -->
+                    </a>
+                </div>
+            </div>
+            <div class="col-xxl-2 col-xl-2 col-lg-2">
+                <div class="contact">
+                    <ul>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+0 (000) 954 765</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@support.com</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <!-- <div class="cart-wrapper d-flex flex-wrap  me-4 me-lg-0">
                 <a href="{{ route('wishlist') }}" class="cart--btn">
@@ -60,7 +79,14 @@
                 <span></span>
                 <span></span>
                 <span></span>
-            </div> -->
+            </div>
+            <form action="{{ route('products') }}" method="GET" class="search-form d-none d-lg-block">
+                <div class="input-group search--group">
+                    <button class="cmn--btn" type="submit"><i class="fas fa-search"></i></button>
+                    <input type="text" class="form-control" name="search" placeholder="@lang('Search here')" value="{{ request()->search ?? null }}">                        
+                </div>
+            </form>
+            -->
         </div>
     </div>
 </div>
