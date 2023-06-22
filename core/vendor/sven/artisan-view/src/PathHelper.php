@@ -5,19 +5,20 @@ namespace Sven\ArtisanView;
 class PathHelper
 {
     /**
-     * @param  string  $path
+     * @param string $path
      */
     public static function createIntermediateFolders($path)
     {
         $folderPath = static::removeFileName($path);
 
-        if (!is_dir($folderPath)) {
+        if (! is_dir($folderPath)) {
             mkdir($folderPath, 0777, true);
         }
     }
 
     /**
-     * @param  string  $path
+     * @param string $path
+     *
      * @return string
      */
     public static function normalizePath($path)
@@ -26,7 +27,8 @@ class PathHelper
     }
 
     /**
-     * @param  string  $path
+     * @param string $path
+     *
      * @return string
      */
     public static function removeFileName($path)

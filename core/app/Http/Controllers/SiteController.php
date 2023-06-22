@@ -28,8 +28,7 @@ class SiteController extends Controller
     }
 
     public function index()
-    {
-        
+    {        
         $pageTitle = 'Home';
         $brands = Brand::all();
         $categories = Category::all();
@@ -43,28 +42,34 @@ class SiteController extends Controller
     }
 
 
-    public function searchModels(Request $request){
-        // $brand = $request->input('make');
-        // $category =  $request->input('model');
-        // $price = $request->input('price');
 
-        // Brand::where('id', $brand)
+    public function searchModels(Request $request){        
+        $brands = Brand::all();
+        $categories = Category::all();       
+        $pageTitle = "Products";
+        return view($this->activeTemplate . 'products', compact('pageTitle','brands','categories'));
     }
+    
 
     public function pages($slug)
-    {
+    {   
+        
         $page      = Page::where('tempname', $this->activeTemplate)->where('slug', $slug)->firstOrFail();
         $pageTitle = $page->name;
         $sections  = $page->secs;
         return view($this->activeTemplate . 'pages', compact('pageTitle', 'sections'));
     }
 
-    public function contact()
-    {
+    public function contact(){       
         $pageTitle = "Contact Us";
         return view($this->activeTemplate . 'contact', compact('pageTitle'));
     }
-
+    public function details(){
+        $brands = Brand::all();
+        $categories = Category::all();
+        $pageTitle = "Product Details";
+        return view($this->activeTemplate . 'details', compact('pageTitle','brands','categories'));        
+    }
     public function contactSubmit(Request $request)
     {
 
@@ -271,7 +276,7 @@ class SiteController extends Controller
         $brands       = Brand::whereIn('id', $brandId)->where('status', 1)->withCount('product')->get();
         $products     = $products->latest()->paginate(getPaginate());
 
-        return view($this->activeTemplate . 'products.all', compact('pageTitle', 'products', 'brands', 'minPrice', 'maxPrice', 'emptyMessage', 'categoryList'));
+        return view($this->activeTemplate . 'products', compact('pageTitle', 'products', 'brands', 'minPrice', 'maxPrice', 'emptyMessage', 'categoryList'));
     }
 
     public function productsFilter(Request $request)

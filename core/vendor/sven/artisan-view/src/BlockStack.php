@@ -17,8 +17,9 @@ class BlockStack
     protected $blocks = [];
 
     /**
-     * @param  \Symfony\Component\Console\Input\InputInterface  $input
-     * @param  string  $path
+     * @param \Symfony\Component\Console\Input\InputInterface $input
+     * @param string $path
+     *
      * @return \Sven\ArtisanView\BlockStack
      */
     public function build(InputInterface $input, $path)
@@ -32,7 +33,7 @@ class BlockStack
 
         /** @var \Sven\ArtisanView\Voters\Voter $voter */
         foreach ($voters as $voter) {
-            if (!$voter->canHandle($input)) {
+            if (! $voter->canHandle($input)) {
                 continue;
             }
 
@@ -43,7 +44,8 @@ class BlockStack
     }
 
     /**
-     * @param  \Sven\ArtisanView\Blocks\Block[]  ...$blocks
+     * @param \Sven\ArtisanView\Blocks\Block[] ...$blocks
+     *
      * @return \Sven\ArtisanView\BlockStack
      */
     public function add(Block ...$blocks)

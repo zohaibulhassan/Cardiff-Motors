@@ -67,8 +67,8 @@ return [
     |
     */
 
-    'timezone' => $timezone,
-
+    /* 'timezone' => $timezone,
+ */
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration

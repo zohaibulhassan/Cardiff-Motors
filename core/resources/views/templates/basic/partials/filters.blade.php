@@ -1,8 +1,7 @@
 <div class="filters">
     <div class="container">
         <div class="row">
-            <div class="col-xxl-1 col-xl-1"></div>
-            <div class="col-xxl-10 col-xl-10">
+            <div class="col-xxl-12 col-xl-12">
                 <div class="form">
                     <form action="{{url('/searchModels')}}" method="post">
                         <div class="select">
@@ -39,10 +38,10 @@
                               </select>
                         </div>
                         <button type="submit">Find Vehicle</button>
+                        @csrf
                     </form>
                 </div>
             </div>
-            <div class="col-xxl-1 col-xl-1"></div>
         </div>
     </div>
 </div>
