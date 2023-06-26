@@ -17,12 +17,11 @@ class ProductController extends Controller {
     public function index(Request $request) {
         $pageTitle    = 'All Products';
         $emptyMessage = 'No product found';
-        $products     = Product::query();
-
+        $products = Product::with('brand');
         if ($request->search) {
             $products->where('name', 'LIKE', "%$request->search%")
                 ->orWhere('price', 'LIKE', "%$request->search%")
-                ->orWhere('product_sku', 'LIKE', "%$request->search%");
+                ->orWhere('year', 'LIKE', "%$request->search%");
         }
 
         $products = $products->latest()->paginate(getPaginate());
@@ -47,6 +46,7 @@ class ProductController extends Controller {
             'brand'          => 'required',
             'description'    => 'required',
             'included'       => 'nullable',
+            'description'   => 'nullable',
             'odometer'       => 'nullable',
             'fuel_type'      => 'nullable',
             'transmission'   => 'nullable',
@@ -92,7 +92,6 @@ class ProductController extends Controller {
         $product->image            = $filename;
         $product->video_link       = $request->video_link;
         $product->save();
-    
         $notify[] = ['success', 'Product added successfully.'];
         return redirect()->back()->withNotify($notify);
     }

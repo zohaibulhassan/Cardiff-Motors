@@ -1,5 +1,5 @@
 @extends($activeTemplate.'layouts.frontend')
-@section('content')
+ @section('content')
 <div class="order-tracking pt-60 pb-60">
     <div class="container">
         <h6 class="text-center mb-4">@lang('Track Your Order')</h6>

@@ -230,7 +230,6 @@ class ComposerStaticInit29571833a739ff27acf2a1f6c38d12ac
         ),
         'A' => 
         array (
-            'Asm89\\Stack\\' => 12,
             'App\\' => 4,
         ),
     );
@@ -588,7 +587,8 @@ class ComposerStaticInit29571833a739ff27acf2a1f6c38d12ac
         ),
         'Fruitcake\\Cors\\' => 
         array (
-            0 => __DIR__ . '/..' . '/fruitcake/laravel-cors/src',
+            0 => __DIR__ . '/..' . '/fruitcake/php-cors/src',
+            1 => __DIR__ . '/..' . '/fruitcake/laravel-cors/src',
         ),
         'Fideloper\\Proxy\\' => 
         array (
@@ -677,10 +677,6 @@ class ComposerStaticInit29571833a739ff27acf2a1f6c38d12ac
         'Barryvdh\\Debugbar\\' => 
         array (
             0 => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src',
-        ),
-        'Asm89\\Stack\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/asm89/stack-cors/src',
         ),
         'App\\' => 
         array (
@@ -880,6 +876,7 @@ class ComposerStaticInit29571833a739ff27acf2a1f6c38d12ac
         'App\\Models\\Wishlist' => __DIR__ . '/../..' . '/app/Models/Wishlist.php',
         'App\\Models\\WithdrawMethod' => __DIR__ . '/../..' . '/app/Models/WithdrawMethod.php',
         'App\\Models\\Withdrawal' => __DIR__ . '/../..' . '/app/Models/Withdrawal.php',
+        'App\\Models\\queries' => __DIR__ . '/../..' . '/app/Models/queries.php',
         'App\\Models\\specifications' => __DIR__ . '/../..' . '/app/Models/specifications.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -887,8 +884,6 @@ class ComposerStaticInit29571833a739ff27acf2a1f6c38d12ac
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Rules\\FileTypeValidate' => __DIR__ . '/../..' . '/app/Rules/FileTypeValidate.php',
-        'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Cors.php',
-        'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/CorsService.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Barryvdh\\Debugbar\\Console\\ClearCommand' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Console/ClearCommand.php',
         'Barryvdh\\Debugbar\\Controllers\\AssetController' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Controllers/AssetController.php',
@@ -1847,6 +1842,7 @@ class ComposerStaticInit29571833a739ff27acf2a1f6c38d12ac
         'Faker\\Provider\\nl_NL\\PhoneNumber' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/PhoneNumber.php',
         'Faker\\Provider\\nl_NL\\Text' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/nl_NL/Text.php',
         'Faker\\Provider\\pl_PL\\Address' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/pl_PL/Address.php',
+        'Faker\\Provider\\pl_PL\\Color' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/pl_PL/Color.php',
         'Faker\\Provider\\pl_PL\\Company' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/pl_PL/Company.php',
         'Faker\\Provider\\pl_PL\\Internet' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/pl_PL/Internet.php',
         'Faker\\Provider\\pl_PL\\LicensePlate' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/pl_PL/LicensePlate.php',
@@ -1961,7 +1957,9 @@ class ComposerStaticInit29571833a739ff27acf2a1f6c38d12ac
         'Faker\\ValidGenerator' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/ValidGenerator.php',
         'Fideloper\\Proxy\\TrustProxies' => __DIR__ . '/..' . '/fideloper/proxy/src/TrustProxies.php',
         'Fideloper\\Proxy\\TrustedProxyServiceProvider' => __DIR__ . '/..' . '/fideloper/proxy/src/TrustedProxyServiceProvider.php',
+        'Fruitcake\\Cors\\CorsService' => __DIR__ . '/..' . '/fruitcake/php-cors/src/CorsService.php',
         'Fruitcake\\Cors\\CorsServiceProvider' => __DIR__ . '/..' . '/fruitcake/laravel-cors/src/CorsServiceProvider.php',
+        'Fruitcake\\Cors\\Exceptions\\InvalidOptionException' => __DIR__ . '/..' . '/fruitcake/php-cors/src/Exceptions/InvalidOptionException.php',
         'Fruitcake\\Cors\\HandleCors' => __DIR__ . '/..' . '/fruitcake/laravel-cors/src/HandleCors.php',
         'GrahamCampbell\\ResultType\\Error' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Error.php',
         'GrahamCampbell\\ResultType\\Result' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Result.php',
@@ -4871,8 +4869,8 @@ class ComposerStaticInit29571833a739ff27acf2a1f6c38d12ac
         'PHPUnit\\TextUI\\XmlConfiguration\\Migrator' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrator.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\MoveAttributesFromFilterWhitelistToCoverage' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/MoveAttributesFromFilterWhitelistToCoverage.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\MoveAttributesFromRootToCoverage' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/MoveAttributesFromRootToCoverage.php',
-        'PHPUnit\\TextUI\\XmlConfiguration\\MoveWhitelistDirectoriesToCoverage' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/MoveWhitelistDirectoriesToCoverage.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\MoveWhitelistExcludesToCoverage' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/MoveWhitelistExcludesToCoverage.php',
+        'PHPUnit\\TextUI\\XmlConfiguration\\MoveWhitelistIncludesToCoverage' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/XmlConfiguration/Migration/Migrations/MoveWhitelistIncludesToCoverage.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\PHPUnit' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/XmlConfiguration/PHPUnit/PHPUnit.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\Php' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/XmlConfiguration/PHP/Php.php',
         'PHPUnit\\TextUI\\XmlConfiguration\\PhpHandler' => __DIR__ . '/..' . '/phpunit/phpunit/src/TextUI/XmlConfiguration/PHP/PhpHandler.php',
@@ -5653,6 +5651,7 @@ class ComposerStaticInit29571833a739ff27acf2a1f6c38d12ac
         'Ramsey\\Uuid\\UuidInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidInterface.php',
         'Ramsey\\Uuid\\Validator\\GenericValidator' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/GenericValidator.php',
         'Ramsey\\Uuid\\Validator\\ValidatorInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/Validator/ValidatorInterface.php',
+        'Razorpay\\Api\\Account' => __DIR__ . '/..' . '/razorpay/razorpay/src/Account.php',
         'Razorpay\\Api\\Addon' => __DIR__ . '/..' . '/razorpay/razorpay/src/Addon.php',
         'Razorpay\\Api\\Api' => __DIR__ . '/..' . '/razorpay/razorpay/src/Api.php',
         'Razorpay\\Api\\ArrayableInterface' => __DIR__ . '/..' . '/razorpay/razorpay/src/ArrayableInterface.php',
@@ -5667,6 +5666,7 @@ class ComposerStaticInit29571833a739ff27acf2a1f6c38d12ac
         'Razorpay\\Api\\Errors\\ServerError' => __DIR__ . '/..' . '/razorpay/razorpay/src/Errors/ServerError.php',
         'Razorpay\\Api\\Errors\\SignatureVerificationError' => __DIR__ . '/..' . '/razorpay/razorpay/src/Errors/SignatureVerificationError.php',
         'Razorpay\\Api\\FundAccount' => __DIR__ . '/..' . '/razorpay/razorpay/src/FundAccount.php',
+        'Razorpay\\Api\\Iin' => __DIR__ . '/..' . '/razorpay/razorpay/src/Iin.php',
         'Razorpay\\Api\\Invoice' => __DIR__ . '/..' . '/razorpay/razorpay/src/Invoice.php',
         'Razorpay\\Api\\Item' => __DIR__ . '/..' . '/razorpay/razorpay/src/Item.php',
         'Razorpay\\Api\\Order' => __DIR__ . '/..' . '/razorpay/razorpay/src/Order.php',
@@ -5674,11 +5674,13 @@ class ComposerStaticInit29571833a739ff27acf2a1f6c38d12ac
         'Razorpay\\Api\\PaymentLink' => __DIR__ . '/..' . '/razorpay/razorpay/src/PaymentLink.php',
         'Razorpay\\Api\\PaymentPage' => __DIR__ . '/..' . '/razorpay/razorpay/src/PaymentPage.php',
         'Razorpay\\Api\\Plan' => __DIR__ . '/..' . '/razorpay/razorpay/src/Plan.php',
+        'Razorpay\\Api\\Product' => __DIR__ . '/..' . '/razorpay/razorpay/src/Product.php',
         'Razorpay\\Api\\QrCode' => __DIR__ . '/..' . '/razorpay/razorpay/src/QrCode.php',
         'Razorpay\\Api\\Refund' => __DIR__ . '/..' . '/razorpay/razorpay/src/Refund.php',
         'Razorpay\\Api\\Request' => __DIR__ . '/..' . '/razorpay/razorpay/src/Request.php',
         'Razorpay\\Api\\Resource' => __DIR__ . '/..' . '/razorpay/razorpay/src/Resource.php',
         'Razorpay\\Api\\Settlement' => __DIR__ . '/..' . '/razorpay/razorpay/src/Settlement.php',
+        'Razorpay\\Api\\Stakeholder' => __DIR__ . '/..' . '/razorpay/razorpay/src/Stakeholder.php',
         'Razorpay\\Api\\Subscription' => __DIR__ . '/..' . '/razorpay/razorpay/src/Subscription.php',
         'Razorpay\\Api\\Token' => __DIR__ . '/..' . '/razorpay/razorpay/src/Token.php',
         'Razorpay\\Api\\Transfer' => __DIR__ . '/..' . '/razorpay/razorpay/src/Transfer.php',
@@ -5686,6 +5688,9 @@ class ComposerStaticInit29571833a739ff27acf2a1f6c38d12ac
         'Razorpay\\Api\\VirtualAccount' => __DIR__ . '/..' . '/razorpay/razorpay/src/VirtualAccount.php',
         'Razorpay\\Api\\Webhook' => __DIR__ . '/..' . '/razorpay/razorpay/src/Webhook.php',
         'Razorpay\\Tests\\AddonTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/AddonTest.php',
+        'Razorpay\\Tests\\ApiTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/ApiTest.php',
+        'Razorpay\\Tests\\CardTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/CardTest.php',
+        'Razorpay\\Tests\\CoverageTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/CoverageTest.php',
         'Razorpay\\Tests\\CustomerTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/CustomerTest.php',
         'Razorpay\\Tests\\EmandateTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/EmandateTest.php',
         'Razorpay\\Tests\\FundTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/FundTest.php',
@@ -5693,6 +5698,7 @@ class ComposerStaticInit29571833a739ff27acf2a1f6c38d12ac
         'Razorpay\\Tests\\ItemTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/ItemTest.php',
         'Razorpay\\Tests\\OrdersTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/OrdersTest.php',
         'Razorpay\\Tests\\PaperNachTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/PaperNachTest.php',
+        'Razorpay\\Tests\\PartnerTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/PartnerTest.php',
         'Razorpay\\Tests\\PaymentLinkTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/PaymentLinkTest.php',
         'Razorpay\\Tests\\PaymentTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/PaymentTest.php',
         'Razorpay\\Tests\\PlanTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/PlanTest.php',
@@ -5700,6 +5706,7 @@ class ComposerStaticInit29571833a739ff27acf2a1f6c38d12ac
         'Razorpay\\Tests\\RefundTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/RefundTest.php',
         'Razorpay\\Tests\\RegisterEmandateTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/RegisterEmandateTest.php',
         'Razorpay\\Tests\\RegisterNachTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/RegisterNachTest.php',
+        'Razorpay\\Tests\\RequestTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/RequestTest.php',
         'Razorpay\\Tests\\SettlementTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/SettlementTest.php',
         'Razorpay\\Tests\\SignatureVerificationTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/SignatureVerificationTest.php',
         'Razorpay\\Tests\\SubscriptionTest' => __DIR__ . '/..' . '/razorpay/razorpay/tests/SubscriptionTest.php',

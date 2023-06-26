@@ -12,7 +12,7 @@
         "coingate/coingate-php": "^3.0",
         "ezyang/htmlpurifier": "^4.13",
         "fideloper/proxy": "^4.4",
-        "fruitcake/laravel-cors": "^2.0",
+        "fruitcake/laravel-cors": "^3.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "intervention/image": "^2.5",
         "laravel/framework": "^8.12",
@@ -54,6 +54,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
+            
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         },

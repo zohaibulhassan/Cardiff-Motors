@@ -9,10 +9,10 @@
                         <thead>
                             <tr>
                                 <th>@lang('Name')</th>
-                                <th>@lang('Product SKU')</th>
+                                <th>@lang('Brand')</th>
                                 <th>@lang('Price')</th>
-                                <th>@lang('Stock Quantity')</th>
-                                <th>@lang('status')</th>
+                                <th>@lang('Year')</th>
+                                <th>@lang('Included')</th>
                                 <th>@lang('Action')</th>
                             </tr>
                         </thead>
@@ -28,9 +28,9 @@
                                         <span class="name">{{ __($product->name) }}</span>
                                     </div>
                                 </td>
-                                <td data-label="@lang('Product SKU')">
+                                <td data-label="@lang('Brand')">
                                     <div class="user">
-                                        <span class="name">{{ __($product->product_sku) }}</span>
+                                        <span class="name">{{ __(    $product->brand->name   ) }}</span>
                                     </div>
                                 </td>
                                 <td data-label="@lang('Price')">
@@ -39,24 +39,19 @@
                                             }}</span>
                                     </div>
                                 </td>
-                                <td data-label="@lang('Stock Quantity')">
+                                <td data-label="@lang('Year')">
                                     <div class="user">
-                                        <span class="name">{{ $product->quantity }}</span>
+                                        <span class="name">{{ $product->year}}</span>
                                     </div>
                                 </td>
-                                <td data-label="@lang('Status')">
-                                    @if ($product->status == 1)
-                                    <span class="text--small badge font-weight-normal badge--success">
-                                        @lang('Enable')</span>
-                                    @else
-                                    <span class="text--small badge font-weight-normal badge--warning">
-                                        @lang('Disable')</span>
-                                    @endif
-
+                                <td data-label="@lang('Year')">
+                                    <div class="user">
+                                        <span class="name">{{ $product->included }}</span>
+                                    </div>
                                 </td>
                                 <td data-label="@lang('Action')">
-                                    <a href="{{ route('admin.product.gallery', $product->id) }}" class="icon-btn btn--info" data-toggle="tooltip" title="" data-original-title="@lang('Add Gallery Images')">
-                                        <i class="la la-star"></i>
+                                    <a href="{{ route('admin.product.gallery', $product->id) }}" class="icon-btn btn--info" data-toggle="tooltip" title="" data-original-title="@lang('Add Sepecification')">
+                                        @lang('Add Sepecification')
                                     </a>
                                     <a href="{{ route('admin.product.edit', $product->id) }}" class="icon-btn ml-1" data-toggle="tooltip" title="" data-original-title="@lang('Edit')">
                                         <i class="la la-pencil"></i>

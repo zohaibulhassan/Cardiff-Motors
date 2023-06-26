@@ -12,7 +12,6 @@
                                 <th>@lang('S.N.')</th>
                                 <th>@lang('Name')</th>
                                 <th>@lang('Status')</th>
-                                <th>@lang('Top Category')</th>
                                 <th>@lang('Action')</th>
                             </tr>
                         </thead>
@@ -36,18 +35,6 @@
                                     @else
                                     <span class="text--small badge font-weight-normal badge--danger">
                                         @lang('Disabled')
-                                    </span>
-                                    @endif
-
-                                </td>
-                                <td data-label="@lang('Top Category')">
-                                    @if ($category->featured == 1)
-                                    <span class="text--small badge font-weight-normal badge--primary">
-                                        @lang('Yes')
-                                    </span>
-                                    @else
-                                    <span class="text--small badge font-weight-normal badge--danger">
-                                        @lang('No')
                                     </span>
                                     @endif
 

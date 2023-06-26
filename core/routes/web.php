@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Services\EbayApi;
 
 Route::get('/clear', function () {
     \Illuminate\Support\Facades\Artisan::call('optimize:clear');
@@ -82,6 +83,10 @@ Route::namespace ('Admin')->prefix('admin')->name('admin.')->group(function () {
     });
 
     Route::middleware('admin')->group(function () {
+        
+
+
+
         Route::get('dashboard', 'AdminController@dashboard')->name('dashboard');
         Route::get('profile', 'AdminController@profile')->name('profile');
         Route::post('profile', 'AdminController@profileUpdate')->name('profile.update');
@@ -230,6 +235,7 @@ Route::namespace ('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::prefix('shipping')->group(function () {
             Route::get('/index', 'ShippingMethodController@index')->name('shipping.index');
             Route::post('/store/{id?}', 'ShippingMethodController@store')->name('shipping.store');
+            Route::get('/delete/{id}', 'ShippingMethodController@delete')->name('shipping.delete');
         });
 
         // WITHDRAW SYSTEM
@@ -447,7 +453,7 @@ Route::get('/all/brands', 'SiteController@allBrands')->name('all.brands');
 
 Route::get('/all/products', 'SiteController@products')->name('products');
 
-Route::get('/hot_deals/products', 'SiteController@products')->name('hot_deals.products');
+// Route::get('/hot_deals/products', 'SiteController@products')->name('hot_deals.products');
 
 Route::get('/featured/products', 'SiteController@products')->name('featured.products');
 
@@ -479,3 +485,24 @@ Route::get('/add/wishlist', 'WishlistController@addWishlist')->name('add-wishlis
 Route::get('/get/wishlist/count', 'WishlistController@getWishlistCount')->name('get-wishlist-count');
 Route::get('/wishlist/products', 'WishlistController@wishlistProducts')->name('wishlist');
 Route::get('/remove/wishlist', 'WishlistController@removeWishlist')->name('remove-wishlist');
+
+
+
+
+
+
+Route::get('/hot_deals/products', function (EbayApi $ebayApi) {
+    dd("hi");
+    die();
+    $response = $ebayApi->createItem();
+
+    if ($response->isSuccess()) {
+        $itemId = $response->toArray()['ItemID'];
+        // Handle the successful creation of the item and store the item ID for future reference
+        return "Product uploaded successfully! Item ID: " . $itemId;
+    } else {
+        $errorMessage = $response->toArray()['Errors'][0]['LongMessage'];
+        // Handle the error message appropriately
+        return "Product upload failed. Error: " . $errorMessage;
+    }
+});

@@ -12,7 +12,6 @@
                                 <th>@lang('S.N.')</th>
                                 <th>@lang('Name')</th>
                                 <th>@lang('Status')</th>
-                                <th>@lang('Top Brand')</th>
                                 <th>@lang('Action')</th>
                             </tr>
                         </thead>
@@ -41,18 +40,6 @@
                                     @endif
 
                                 </td>
-                                <td data-label="@lang('Top Brand')">
-                                    @if ($brand->featured == 1)
-                                    <span class="text--small badge font-weight-normal badge--primary">
-                                        @lang('Yes')
-                                    </span>
-                                    @else
-                                    <span class="text--small badge font-weight-normal badge--danger">
-                                        @lang('No')
-                                    </span>
-                                    @endif
-
-                                </td>
                                 <td data-label="@lang('Action')">
                                     <button class="icon-btn editButton" data-toggle="modal"
                                         data-id="{{ $brand->id }}" data-name="{{ __($brand->name) }}"
@@ -70,7 +57,7 @@
                             @endforelse
 
                         </tbody>
-                    </table><!-- table end -->
+                    </table>
                 </div>
             </div>
             @if ($brands->hasPages())

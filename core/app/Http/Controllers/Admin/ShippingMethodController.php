@@ -12,7 +12,17 @@ class ShippingMethodController extends Controller {
         $pageTitle    = 'All Queries';
         $emptyMessage = 'No shipping methods found';
         $users = Queries::all();
+        if ($request->search) {
+            $users->where('name', 'LIKE', "%$request->search%");
+        }
+        // dd($request->search);
         return view('admin.shipping.index', compact('pageTitle', 'emptyMessage','users'));
+    }
+    public function delete($id) {
+        queries::find($id)->delete();
+        $notification = 'Query Deleted  successfully.';
+        $notify[] = ['warning', $notification];
+        return back()->withNotify($notify);
     }
 
     public function store(Request $request, $id = 0) {

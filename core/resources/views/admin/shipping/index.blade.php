@@ -15,6 +15,7 @@
                                 <th> @lang('Wishtoreserve')</th>
                                 <th> @lang('Message')</th>
                                 <th> @lang('Date')</th>
+                                <th> @lang('Action')</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -27,6 +28,11 @@
                                 <td>{{ $user->wishtoreserve }}</td>
                                 <td>{{ $user->message }}</td>
                                 <td>{{ $user->created_at }}</td>
+                                <td>
+                                    <a href="{{ route('admin.shipping.delete', $user->id) }}"><i
+                                            class="fa fa-trash"></i></a>
+                                </td>
+                                
                             </tr>
                             @endforeach
                         </tbody>
@@ -132,9 +138,7 @@
 @endsection
 
 @push('breadcrumb-plugins')
-<a data-toggle="modal" href="#createCoupon" class="btn btn-sm btn--primary mr-2 d-flex align-items-center add-new-btn">
-    <i class="las la-plus"></i> @lang('Add New')
-</a>
+
 <form method="GET" class="form-inline float-sm-right bg--white search-form">
     <div class="input-group has_append">
         <input type="text" name="search" id="mySearch" class="form-control" placeholder="@lang('Area name')"
