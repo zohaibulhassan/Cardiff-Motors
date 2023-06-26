@@ -37,7 +37,8 @@ class Config
     protected $path;
 
     /**
-     * @param  string  $name
+     * @param string $name
+     *
      * @return \Sven\ArtisanView\Config
      */
     public function setName($name)
@@ -56,12 +57,13 @@ class Config
     }
 
     /**
-     * @param  string  $extension
+     * @param string $extension
+     *
      * @return \Sven\ArtisanView\Config
      */
     public function setExtension($extension)
     {
-        if (!Str::startsWith($extension, '.')) {
+        if (! Str::startsWith($extension, '.')) {
             $extension = ".$extension";
         }
 
@@ -79,7 +81,8 @@ class Config
     }
 
     /**
-     * @param  bool  $resource
+     * @param bool $resource
+     *
      * @return \Sven\ArtisanView\Config
      */
     public function setResource($resource)
@@ -98,7 +101,8 @@ class Config
     }
 
     /**
-     * @param  mixed  ...$verbs
+     * @param mixed ...$verbs
+     *
      * @return \Sven\ArtisanView\Config
      */
     public function setVerbs(...$verbs)
@@ -125,7 +129,8 @@ class Config
     }
 
     /**
-     * @param  bool  $force
+     * @param bool $force
+     *
      * @return \Sven\ArtisanView\Config
      */
     public function setForce(bool $force)

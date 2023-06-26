@@ -6,10 +6,10 @@ $socialIcons = getContent('social_icon.element',false,null,true);
 $categoryList = App\Models\Category::where('status',1)->with('subcategories')->latest()->limit(6)->get();
 $policyPages = getContent('policy_pages.element', false, null, true);
 @endphp
-<!-- @include($activeTemplate.'partials.footer.footer_top') -->
+@include($activeTemplate.'partials.footer.footer_top')
 
 <footer>
-    @if ($categoryList->count() > 0)
+   <!--  @if ($categoryList->count() > 0)
     <div class="footer-top">
         <div class="container">
             <div class="footer__wrapper">
@@ -30,46 +30,79 @@ $policyPages = getContent('policy_pages.element', false, null, true);
             </div>
         </div>
     </div>
-    @endif
-    <div class="container">
-        <div class="footer-bottom">
-            <div class="footer__wrapper">
-                <div class="footer__bottom__widget">
-                    <h6 class="title">@lang('Our Address')</h6>
-                    <p>{{ __(@$footerAddress->data_values->address) }}</p>
-                </div>
-                <div class="footer__bottom__widget">
-                    <h6 class="title">@lang('Payment Methods')</h6>
-                    <div class="d-flex flex-wrap">
-                        @foreach ($paymentOption as $payment)
-                        <div class="pay-img">
-                            <img src="{{ getImage('assets/images/frontend/footer/'.@$payment->data_values->image,'70x40') }}" alt="payment">
-                        </div>
-                        @endforeach
+    @endif -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4">
+                    <div class="contact-info">
+                        <h2>Contact Us</h2>
+                        <p>There are many variations of passaes of orem ipsum available, but the majority have in some form, by ipsum injected</p>
+                        <ul>
+                            <li>
+                                <img src="{{ asset('assets/images/icon-phone.png') }}" alt="">
+                                <div class="text">
+                                    <label for="">PHONE NUMBER</label>
+                                    <p>+0 (000) 954 765</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="{{ asset('assets/images/icon-email.png') }}" alt="">
+                                <div class="text">
+                                    <label for="">EMAIL ADDRESs</label>
+                                    <p>info@support.com</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="{{ asset('assets/images/icon-location.png') }}" alt="">
+                                <div class="text">
+                                    <label for="">address</label>
+                                    <p>East 56th Street New York, NY, USA</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="footer__bottom__widget">
-                    <h6 class="title">@lang('Subscribe Newsletter')</h6>
-                    <p class="mb-4">{{ __(@$footerContent->data_values->subscribe_title) }}</p>
-                    <form class="newletter-form">
-                        <div class="input-group">
-                            <input type="text" class="form-control subscribe-email" placeholder="@lang('Enter Your Email')" required>
-                            <button type="submit" class="cmn--btn subscribe-btn"><i class="las la-paper-plane"></i></button>
-                        </div>
-                    </form>
+                <div class="col-xl-2 col-lg-2">
+                    <div class="links">
+                        <h2>Our Info</h2>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Stock</a></li>
+                            <li><a href="#">Sell</a></li>
+                            <li><a href="#">Finance</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="footer__bottom__widget">
-                    <h6 class="title">@lang('Connect With')</h6>
-                    <p class="mb-3">{{ __(@$footerContent->data_values->connect_title) }}</p>
-                    <ul class="social-icons justify-content-start">
-                        @foreach ($socialIcons as $social)
-                        <li>
-                            <a href="{{ @$social->data_values->url }}">
-                                @php echo $social->data_values->social_icon @endphp
-                            </a>
-                        </li>
-                        @endforeach
-                    </ul>
+                <div class="col-xl-2 col-lg-2">
+                    <div class="links">
+                        <h2>Quick Links</h2>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">Stock</a></li>
+                            <li><a href="#">Sell</a></li>
+                            <li><a href="#">Finance</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4">
+                    <div class="subscribe">
+                        <h2>Subscribe Us</h2>
+                        <form action="">
+                            <div class="fields">
+                                <input type="text" name="" placeholder="Subscribe to our newsletter">
+                                <button><i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="social">
+                        <a href="#"><img src="{{ asset('assets/images/fb.png') }}" alt=""></a>
+                        <a href="#"><img src="{{ asset('assets/images/twitter.png') }}" alt=""></a>
+                        <a href="#"><img src="{{ asset('assets/images/monkey.png') }}" alt=""></a>
+                        <a href="#"><img src="{{ asset('assets/images/linkedin.png') }}" alt=""></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,13 +111,11 @@ $policyPages = getContent('policy_pages.element', false, null, true);
         <div class="container">
             <div class="copyright-area justify-content-beetween">
                 <div class="copyright">
-                    @lang('Copyright') &copy; @lang('All Right Reserved by')
-                    <a href="{{ route('home') }}" class="text--base">{{__($general->sitename)}}</a>
+                    @lang('Copyright') &copy; @lang('All Right Reserved by') 
+                    {{__($general->sitename)}}
                 </div>
                 <div class="policy-page">
-                    @foreach ($policyPages as $policy)  
-                        <a href="{{ route('page.details', [$policy->id, slug($policy->data_values->title)]) }}" class="text-white">{{ __(@$policy->data_values->title) }}{{ $loop->last ? '' : ',' }}</a>
-                    @endforeach
+                    <img src="{{ asset('assets/images/payment-method.png') }}" alt="">
                 </div>
             </div>
         </div>
