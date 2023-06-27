@@ -1291,19 +1291,23 @@ footer .scrollTop::before {
     height: 100%;
     align-items: center;
 }
-.header-bottom .menu li{
-    padding: 10px 20px;
+.header-bottom .menu > li{
+    padding: 25px 20px;
     font-size: 16px;
     position: relative;
+    border-right: 1px solid #1f1f1f;
 }
-.header-bottom .menu li::after{
-    content: "|";
-    position: absolute;
-    color: #fff;
-    right: -5px;
+.header-bottom .menu li:hover{
+    background-color: rgba(255,255,255,0.05);
 }
-.header-bottom .menu li:last-child::after{
-    display: none;
+.header-bottom .menu li.dropdown .dropdown-menu{
+    background-color: #000102;
+}
+.header-bottom .menu li.dropdown .dropdown-menu li:hover{
+    background-color: #ED1B24;
+}
+.header-bottom .menu li.dropdown .dropdown-menu li a:hover{
+    background-color: transparent;
 }
 .header-bottom .menu li a{
     color: #fff;
@@ -1323,11 +1327,16 @@ footer .scrollTop::before {
 .header-bottom .contact ul li{
     color: #fff;
     list-style: none;
-    font-size: 15px;
+    font-size: 14px;
     padding: 0;
+    background-image: linear-gradient(120deg, #ba000a,#cd201f,#730303);
+    border-radius: 20px;
+    padding: 5px 20px;
+    margin: 5px 0;
 }
-.header-bottom .contact ul li i{
-    color: #EE1B24;
+.header-bottom .contact ul li:last-child{
+    background-image: none;
+    border: 2px solid #ED1B24;
 }
 .header-wrapper .logo a img {
     width: 100%;
@@ -1386,16 +1395,13 @@ footer .scrollTop::before {
 }
 .filters{
     position: relative;
+    background-color: #000102;
 }
 .filters .form{
     background-image:linear-gradient(180deg, rgba(0, 1, 2, 1) 23.35%, rgba(13, 13, 13, 1) 100%);
     border-radius: 15px;
     border-bottom: 2px solid #EE1B24;
-    padding: 20px 50px;
-    position: absolute;
-    top: -20px;
-    width: 83%;
-    z-index: 999;
+    padding: 20px 50px;   
 }
 .filters .form form{
     display: flex;
@@ -1427,8 +1433,7 @@ footer .scrollTop::before {
     flex: 0 0 20%;
 }
 .products-listing{
-    padding: 150px 0 100px !important;
-    background-color: #000102;
+    padding: 50px 0 !important;
 }
 .products-listing .item{
     position: relative;
@@ -1527,7 +1532,7 @@ footer .scrollTop::before {
 .services .item .text-wrap{   
     height: 100%;
     width: 100%;
-    padding: 20px 150px;
+    padding: 20px 75px;
     position: absolute;
     color: #fff;
     display: flex;
@@ -1541,21 +1546,22 @@ footer .scrollTop::before {
 }
 .services .item .text-wrap h3{
     color: #fff;
-    font-size: 20px;
+    font-size: 30px;
     line-height: 22px;
     text-align: left;
     text-transform: uppercase;
+    font-weight: 400;
 }
 .services .item .text-wrap h2{
     color: #ED1B24;
-    font-size: 36px;
+    font-size: 50px;
     text-decoration: none;
     text-transform: uppercase;
 }
 .count{
-    background-image: url('../../../images/count.png');
+    /* background-image: url('../../../images/count.png');
     background-size: contain;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     padding: 50px 0 17px;
     text-align: center;
     position: relative;
@@ -1595,7 +1601,7 @@ footer .scrollTop::before {
     color: #ED1B24;
 }
 .count .panel .text p{
-    color: #fff;
+    color: #3a3a3a;
     text-transform: uppercase;
     font-size: 14px;
 }
@@ -1611,8 +1617,7 @@ footer .scrollTop::before {
 .work img{
     width: 100%;
 }
-.reviews{
-    background-color: #000102;
+.reviews{    
     padding: 100px 0;
     color: #fff;
 }
@@ -1633,7 +1638,7 @@ footer .scrollTop::before {
     top: 12px;
 }
 .reviews h2{
-    color: #fff;
+    color: #3a3a3a;
 }
 .reviews #reviews{
     padding: 50px 0;
@@ -1829,7 +1834,7 @@ footer .scrollTop::before {
     justify-content: space-between;
 }
 .products .panel .details .btn-set a{
-    padding: 10px 40px;
+    padding: 10px 30px;
     color: #fff;
     border-radius: 25px;
     transition: all ease-in-out 1s;

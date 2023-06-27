@@ -6,10 +6,11 @@ $socialIcons = getContent('social_icon.element',false,null,true);
 $categoryList = App\Models\Category::where('status',1)->with('subcategories')->latest()->limit(6)->get();
 $policyPages = getContent('policy_pages.element', false, null, true);
 @endphp
-@include($activeTemplate.'partials.footer.footer_top')
+
 
 <footer>
    <!--  @if ($categoryList->count() > 0)
+
     <div class="footer-top">
         <div class="container">
             <div class="footer__wrapper">

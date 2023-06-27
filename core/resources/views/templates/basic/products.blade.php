@@ -71,7 +71,7 @@
                                 </ul>
                                 <div class="btn-set">
                                     <a href="#"><i class="fab fa-whatsapp"></i> Chat</a>
-                                    <a href="#">Book Now</a>
+                                    <a href="{{ url('productdetails') }}"><i class="fas fa-angle-right"></i> More Details</a>
                                 </div>
                             </div>
                         </div>
@@ -144,7 +144,7 @@
                                 </ul>
                                 <div class="btn-set">
                                     <a href="#"><i class="fab fa-whatsapp"></i> Chat</a>
-                                    <a href="#">Book Now</a>
+                                    <a href="{{ url('productdetails') }}"><i class="fas fa-angle-right"></i> More Details</a>
                                 </div>
                             </div>
                         </div>
