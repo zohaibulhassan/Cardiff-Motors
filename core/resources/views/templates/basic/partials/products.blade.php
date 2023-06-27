@@ -8,7 +8,7 @@
                             <img src="{{ asset('assets/images/product/p1.png') }}" alt="">
                         </div>
                         <div class="text-wrap">
-                            <h2><a href="#">Mercedes C-Class</a></h2>
+                            <h2><a href="{{ url('productdetails') }}">Mercedes C-Class</a></h2>
                             <ul class="features">
                                 <li>
                                     <img src="{{ asset('assets/images/model.png') }}" alt="">
@@ -34,7 +34,7 @@
                             <img src="{{ asset('assets/images/product/p2.png') }}" alt="">
                         </div>
                         <div class="text-wrap">
-                            <h2><a href="#">Mercedes AMG GT</a></h2>
+                            <h2><a href="{{ url('productdetails') }}">Mercedes AMG GT</a></h2>
                             <ul class="features">
                                 <li>
                                     <img src="{{ asset('assets/images/model.png') }}" alt="">
@@ -60,7 +60,7 @@
                             <img src="{{ asset('assets/images/product/p3.png') }}" alt="">
                         </div>
                         <div class="text-wrap">
-                            <h2><a href="#">Mercedes CLS</a></h2>
+                            <h2><a href="{{ url('productdetails') }}">Mercedes CLS</a></h2>
                             <ul class="features">
                                 <li>
                                     <img src="{{ asset('assets/images/model.png') }}" alt="">

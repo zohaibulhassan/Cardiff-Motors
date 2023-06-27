@@ -1,5 +1,5 @@
 <div class="header-bottom bg--section py-2">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-xxl-2 col-xl-2 p-rel">
                 <div class="logo">
@@ -16,10 +16,14 @@
                             @lang('Home')
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ route('products') }}" class="{{ menuActive('products') }}">
-                            Stock
+                    <li class="dropdown">
+                        <a href="{{ route('products') }}" class="{{ menuActive('products') }} dropdown-toggle" data-bs-toggle="dropdown">
+                            Stock 
                         </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Current Stock</a></li>
+                            <li><a class="dropdown-item" href="#">Old Stock</a></li>                            
+                        </ul>
                     </li>
                     <li>
                         <a href="{{ route('contact') }}" class="{{ menuActive('contact') }}">
@@ -46,7 +50,7 @@
             <div class="col-xxl-2 col-xl-2">
                 <div class="rating">
                     <a href="{{ route('home') }}">
-                        <img src="{{ asset('assets/images/autotrader.png') }}" alt="">
+                        <img src="{{ asset('assets/images/autotrader_alt.png') }}" alt="">
                         <!-- <h1>Cardiff Motors</h1> -->
                     </a>
                 </div>

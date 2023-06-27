@@ -9,7 +9,7 @@
 @include($activeTemplate.'partials.count')
 @include($activeTemplate.'partials.services')
 @include($activeTemplate.'partials.gallery')
-@include($activeTemplate.'partials.contact')
+
 @include($activeTemplate.'partials.reviews')
 
 
