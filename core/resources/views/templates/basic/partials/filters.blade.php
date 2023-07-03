@@ -6,10 +6,7 @@
                     <form action="{{url('/searchModels')}}" method="post">
                         <div class="select">
                             <select class="form-control" name="make" id="make">
-                                <option value="">--Make--</option>
-                                @foreach ($brands as $brand)
-                                <option value="{{ $brand->id }}">{{ $brand->name }}</option>
-                                @endforeach
+                                <option value="">--Make--</option>               
                             </select>
                         </div>
                         <div class="select">

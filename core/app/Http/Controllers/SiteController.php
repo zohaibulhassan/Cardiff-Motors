@@ -7,6 +7,8 @@ use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Frontend;
 use App\Models\Language;
+use App\Models\ProductGallery;
+use App\Models\specifications;
 use App\Models\Order;
 use App\Models\OrderDetail;
 use App\Models\Page;
@@ -17,6 +19,7 @@ use App\Models\SupportMessage;
 use App\Models\SupportTicket;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class SiteController extends Controller
@@ -28,14 +31,15 @@ class SiteController extends Controller
     }
 
     public function index()
-    {        
+    {
         $pageTitle = 'Home';
         $brands = Brand::all();
         $categories = Category::all();
-        return view($this->activeTemplate . 'home', compact('pageTitle','brands','categories'));
+        return view($this->activeTemplate . 'home', compact('pageTitle', 'brands', 'categories'));
     }
 
-    public function fetchModels(Request $request) {
+    public function fetchModels(Request $request)
+    {
         $brandId = $request->input('brandId');
         $cat = Category::where('brand_id', $brandId)->get();
         return response()->json(['models' => $cat]);
@@ -43,33 +47,43 @@ class SiteController extends Controller
 
 
 
-    public function searchModels(Request $request){        
+    public function searchModels(Request $request)
+    {
         $brands = Brand::all();
-        $categories = Category::all();       
+        $categories = Category::all();
         $pageTitle = "Products";
-        return view($this->activeTemplate . 'products', compact('pageTitle','brands','categories'));
+        return view($this->activeTemplate . 'products', compact('pageTitle', 'brands', 'categories'));
     }
-    
+
 
     public function pages($slug)
-    {   
-        
+    {
+
         $page      = Page::where('tempname', $this->activeTemplate)->where('slug', $slug)->firstOrFail();
         $pageTitle = $page->name;
         $sections  = $page->secs;
         return view($this->activeTemplate . 'pages', compact('pageTitle', 'sections'));
     }
 
-    public function contact(){       
+    public function contact()
+    {
         $pageTitle = "Contact Us";
         return view($this->activeTemplate . 'contact', compact('pageTitle'));
     }
-    public function details(){
-        $brands = Brand::all();
-        $categories = Category::all();
+    public function details($id)
+    {
+        $product = Product::find($id);
+        $product['gallery'] = ProductGallery::all()->where('product_id', $id);
+        $product['specification'] = specifications::all()->where('product_id', $id);
+
+        $product['brand'] = Brand::find($product->brand_id);
+
+
         $pageTitle = "Product Details";
-        return view($this->activeTemplate . 'details', compact('pageTitle','brands','categories'));        
+        return view($this->activeTemplate . 'details', compact('pageTitle',  'product',));
     }
+
+
     public function contactSubmit(Request $request)
     {
 
@@ -216,68 +230,17 @@ class SiteController extends Controller
 
     public function products(Request $request)
     {
+        $products = Product::leftJoin('product_galleries', 'products.id', '=', 'product_galleries.product_id')
+            ->select('products.*', DB::raw('COUNT(product_galleries.id) as product_galleries_count'))
+            ->groupBy('products.id')
+            ->get();
 
-        $pageTitle    = 'All Products';
-        $emptyMessage = 'No product found';
+        $brands = Brand::all();
+        $pageTitle = "Product";
 
-        $products = Product::active()->with('reviews');
-
-        if ($request->route()->getName() == 'hot_deals.products') {
-            $pageTitle = 'Hot Deal Products';
-            $products  = $products->where('hot_deals', 1);
-        }
-
-        if ($request->route()->getName() == 'featured.products') {
-            $pageTitle = 'Featured Products';
-            $products  = $products->where('featured_product', 1);
-        }
-
-        if ($request->route()->getName() == 'best-selling.products') {
-            $pageTitle = 'Best Selling Products';
-
-            $products = $products->where('sale_count', '!=', 0)->orderBy('sale_count', 'desc');
-        }
-
-        if ($request->search) {
-            $pageTitle     = 'Search Results';
-            $searchKeyword = $request->search;
-            $products      = $products->where(function ($q) use ($searchKeyword) {
-                $q->orWhere('description', 'LIKE', '%' . $searchKeyword . '%')
-                    ->orWhere('features', 'LIKE', '%' . $searchKeyword . '%')
-                    ->orWhere('slug', 'LIKE', '%' . $searchKeyword . '%')
-                    ->orWhere('summary', 'LIKE', '%' . $searchKeyword . '%')
-                    ->orWhere('name', 'LIKE', '%' . $searchKeyword . '%')->orWhereHas('category', function ($category) use ($searchKeyword) {
-                        $category->where('name', 'like', "%$searchKeyword%");
-                    })->orWhereHas('subcategory', function ($subcategory) use ($searchKeyword) {
-                        $subcategory->where('name', 'like', "%$searchKeyword%");
-                    })->orWhereHas('brand', function ($brand) use ($searchKeyword) {
-                        $brand->where('name', 'like', "%$searchKeyword%");
-                    });
-            });
-        }
-
-        $cloneProducts = clone $products;
-        $minPrice      = $cloneProducts->min('price') ?? 0;
-        $maxPrice      = $cloneProducts->max('price') ?? 0;
-
-        $categoryArray = [];
-        $brandArray    = [];
-
-        foreach ($products->get() as $product) {
-            $categoryArray[] = $product->category_id;
-            $brandArray[]    = $product->brand_id;
-        }
-
-        $categoryId = array_unique($categoryArray);
-        $brandId    = array_unique($brandArray);
-
-
-        $categoryList = Category::whereIn('id', $categoryId)->where('status', 1)->withCount('product')->get();
-        $brands       = Brand::whereIn('id', $brandId)->where('status', 1)->withCount('product')->get();
-        $products     = $products->latest()->paginate(getPaginate());
-
-        return view($this->activeTemplate . 'products', compact('pageTitle', 'products', 'brands', 'minPrice', 'maxPrice', 'emptyMessage', 'categoryList'));
+        return view($this->activeTemplate . 'products', compact('pageTitle', 'products', 'brands'));
     }
+
 
     public function productsFilter(Request $request)
     {

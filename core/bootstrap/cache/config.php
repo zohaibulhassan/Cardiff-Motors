@@ -1,6 +1,6 @@
-<?php return array (
-  'app' => 
-  array (
+<?php return array(
+  'app' =>
+  array(
     'name' => 'Laravel',
     'env' => 'local',
     'debug' => true,
@@ -11,8 +11,8 @@
     'faker_locale' => 'en_US',
     'key' => 'base64:rnZODeR1aMWqI6GXSXwIe39CmVIy8cl+xOCYI0/2rKc=',
     'cipher' => 'AES-256-CBC',
-    'providers' => 
-    array (
+    'providers' =>
+    array(
       0 => 'Illuminate\\Auth\\AuthServiceProvider',
       1 => 'Illuminate\\Broadcasting\\BroadcastServiceProvider',
       2 => 'Illuminate\\Bus\\BusServiceProvider',
@@ -40,8 +40,8 @@
       24 => 'App\\Providers\\EventServiceProvider',
       25 => 'App\\Providers\\RouteServiceProvider',
     ),
-    'aliases' => 
-    array (
+    'aliases' =>
+    array(
       'App' => 'Illuminate\\Support\\Facades\\App',
       'Arr' => 'Illuminate\\Support\\Arr',
       'Artisan' => 'Illuminate\\Support\\Facades\\Artisan',
@@ -80,61 +80,61 @@
       'View' => 'Illuminate\\Support\\Facades\\View',
     ),
   ),
-  'auth' => 
-  array (
-    'defaults' => 
-    array (
+  'auth' =>
+  array(
+    'defaults' =>
+    array(
       'guard' => 'web',
       'passwords' => 'users',
     ),
-    'guards' => 
-    array (
-      'web' => 
-      array (
+    'guards' =>
+    array(
+      'web' =>
+      array(
         'driver' => 'session',
         'provider' => 'users',
       ),
-      'api' => 
-      array (
+      'api' =>
+      array(
         'driver' => 'session',
         'provider' => 'users',
         'hash' => true,
       ),
-      'admin' => 
-      array (
+      'admin' =>
+      array(
         'driver' => 'session',
         'provider' => 'admins',
       ),
-      'sanctum' => 
-      array (
+      'sanctum' =>
+      array(
         'driver' => 'sanctum',
         'provider' => NULL,
       ),
     ),
-    'providers' => 
-    array (
-      'users' => 
-      array (
+    'providers' =>
+    array(
+      'users' =>
+      array(
         'driver' => 'eloquent',
         'model' => 'App\\Models\\User',
       ),
-      'admins' => 
-      array (
+      'admins' =>
+      array(
         'driver' => 'eloquent',
         'model' => 'App\\Models\\Admin',
       ),
     ),
-    'passwords' => 
-    array (
-      'users' => 
-      array (
+    'passwords' =>
+    array(
+      'users' =>
+      array(
         'provider' => 'users',
         'table' => 'password_resets',
         'expire' => 60,
         'throttle' => 60,
       ),
-      'admins' => 
-      array (
+      'admins' =>
+      array(
         'provider' => 'admins',
         'table' => 'admin_password_resets',
         'expire' => 60,
@@ -142,99 +142,98 @@
     ),
     'password_timeout' => 10800,
   ),
-  'broadcasting' => 
-  array (
+  'broadcasting' =>
+  array(
     'default' => 'log',
-    'connections' => 
-    array (
-      'pusher' => 
-      array (
+    'connections' =>
+    array(
+      'pusher' =>
+      array(
         'driver' => 'pusher',
         'key' => '',
         'secret' => '',
         'app_id' => '',
-        'options' => 
-        array (
+        'options' =>
+        array(
           'cluster' => 'mt1',
           'useTLS' => true,
         ),
       ),
-      'ably' => 
-      array (
+      'ably' =>
+      array(
         'driver' => 'ably',
         'key' => NULL,
       ),
-      'redis' => 
-      array (
+      'redis' =>
+      array(
         'driver' => 'redis',
         'connection' => 'default',
       ),
-      'log' => 
-      array (
+      'log' =>
+      array(
         'driver' => 'log',
       ),
-      'null' => 
-      array (
+      'null' =>
+      array(
         'driver' => 'null',
       ),
     ),
   ),
-  'cache' => 
-  array (
+  'cache' =>
+  array(
     'default' => 'file',
-    'stores' => 
-    array (
-      'apc' => 
-      array (
+    'stores' =>
+    array(
+      'apc' =>
+      array(
         'driver' => 'apc',
       ),
-      'array' => 
-      array (
+      'array' =>
+      array(
         'driver' => 'array',
         'serialize' => false,
       ),
-      'database' => 
-      array (
+      'database' =>
+      array(
         'driver' => 'database',
         'table' => 'cache',
         'connection' => NULL,
         'lock_connection' => NULL,
       ),
-      'file' => 
-      array (
+      'file' =>
+      array(
         'driver' => 'file',
-        'path' => 'D:\\wamp3.3\\www\\hello\\core\\storage\\framework/cache/data',
+        'path' => 'D:\\laragon\\www\\hello\\core\\storage\\framework/cache/data',
       ),
-      'memcached' => 
-      array (
+      'memcached' =>
+      array(
         'driver' => 'memcached',
         'persistent_id' => NULL,
-        'sasl' => 
-        array (
+        'sasl' =>
+        array(
           0 => NULL,
           1 => NULL,
         ),
-        'options' => 
-        array (
-        ),
-        'servers' => 
-        array (
-          0 => 
-          array (
+        'options' =>
+        array(),
+        'servers' =>
+        array(
+          0 =>
+          array(
             'host' => '127.0.0.1',
             'port' => 11211,
             'weight' => 100,
           ),
         ),
       ),
-      'redis' => 
-      array (
+      'redis' =>
+      array(
         'driver' => 'redis',
         'connection' => 'cache',
         'lock_connection' => 'default',
       ),
-      'dynamodb' => 
-      array (
+      'dynamodb' =>
+      array(
         'driver' => 'dynamodb',
         'key' => '',
         'secret' => '',
@@ -245,49 +244,47 @@
     ),
     'prefix' => 'laravel_cache',
   ),
-  'cors' => 
-  array (
-    'paths' => 
-    array (
+  'cors' =>
+  array(
+    'paths' =>
+    array(
       0 => 'api/*',
       1 => 'sanctum/csrf-cookie',
     ),
-    'allowed_methods' => 
-    array (
+    'allowed_methods' =>
+    array(
       0 => '*',
     ),
-    'allowed_origins' => 
-    array (
+    'allowed_origins' =>
+    array(
       0 => '*',
     ),
-    'allowed_origins_patterns' => 
-    array (
-    ),
-    'allowed_headers' => 
-    array (
+    'allowed_origins_patterns' =>
+    array(),
+    'allowed_headers' =>
+    array(
       0 => '*',
     ),
-    'exposed_headers' => 
-    array (
-    ),
+    'exposed_headers' =>
+    array(),
     'max_age' => 0,
     'supports_credentials' => false,
   ),
-  'database' => 
-  array (
+  'database' =>
+  array(
     'default' => 'mysql',
-    'connections' => 
-    array (
-      'sqlite' => 
-      array (
+    'connections' =>
+    array(
+      'sqlite' =>
+      array(
         'driver' => 'sqlite',
         'url' => NULL,
         'database' => 'cardiff',
         'prefix' => '',
         'foreign_key_constraints' => true,
       ),
-      'mysql' => 
-      array (
+      'mysql' =>
+      array(
         'driver' => 'mysql',
         'url' => NULL,
         'host' => '127.0.0.1',
@@ -302,12 +299,11 @@
         'prefix_indexes' => true,
         'strict' => false,
         'engine' => NULL,
-        'options' => 
-        array (
-        ),
+        'options' =>
+        array(),
       ),
-      'pgsql' => 
-      array (
+      'pgsql' =>
+      array(
         'driver' => 'pgsql',
         'url' => NULL,
         'host' => '127.0.0.1',
@@ -321,8 +317,8 @@
         'schema' => 'public',
         'sslmode' => 'prefer',
       ),
-      'sqlsrv' => 
-      array (
+      'sqlsrv' =>
+      array(
         'driver' => 'sqlsrv',
         'url' => NULL,
         'host' => '127.0.0.1',
@@ -336,24 +332,24 @@
       ),
     ),
     'migrations' => 'migrations',
-    'redis' => 
-    array (
+    'redis' =>
+    array(
       'client' => 'phpredis',
-      'options' => 
-      array (
+      'options' =>
+      array(
         'cluster' => 'redis',
         'prefix' => 'laravel_database_',
       ),
-      'default' => 
-      array (
+      'default' =>
+      array(
         'url' => NULL,
         'host' => '127.0.0.1',
         'password' => NULL,
         'port' => '6379',
         'database' => '0',
       ),
-      'cache' => 
-      array (
+      'cache' =>
+      array(
         'url' => NULL,
         'host' => '127.0.0.1',
         'password' => NULL,
@@ -362,25 +358,25 @@
       ),
     ),
   ),
-  'filesystems' => 
-  array (
+  'filesystems' =>
+  array(
     'default' => 'local',
-    'disks' => 
-    array (
-      'local' => 
-      array (
+    'disks' =>
+    array(
+      'local' =>
+      array(
         'driver' => 'local',
-        'root' => 'D:\\wamp3.3\\www\\hello\\core\\storage\\app',
+        'root' => 'D:\\laragon\\www\\hello\\core\\storage\\app',
       ),
-      'public' => 
-      array (
+      'public' =>
+      array(
         'driver' => 'local',
-        'root' => 'D:\\wamp3.3\\www\\hello\\core\\storage\\app/public',
+        'root' => 'D:\\laragon\\www\\hello\\core\\storage\\app/public',
         'url' => 'http://localhost/hello//storage',
         'visibility' => 'public',
       ),
-      's3' => 
-      array (
+      's3' =>
+      array(
         'driver' => 's3',
         'key' => '',
         'secret' => '',
@@ -390,114 +386,114 @@
         'endpoint' => NULL,
       ),
     ),
-    'links' => 
-    array (
-      'D:\\wamp3.3\\www\\hello\\core\\public\\storage' => 'D:\\wamp3.3\\www\\hello\\core\\storage\\app/public',
+    'links' =>
+    array(
+      'D:\\laragon\\www\\hello\\core\\public\\storage' => 'D:\\laragon\\www\\hello\\core\\storage\\app/public',
     ),
   ),
-  'hashing' => 
-  array (
+  'hashing' =>
+  array(
     'driver' => 'bcrypt',
-    'bcrypt' => 
-    array (
+    'bcrypt' =>
+    array(
       'rounds' => 10,
     ),
-    'argon' => 
-    array (
+    'argon' =>
+    array(
       'memory' => 1024,
       'threads' => 2,
       'time' => 2,
     ),
   ),
-  'image' => 
-  array (
+  'image' =>
+  array(
     'driver' => 'gd',
   ),
-  'logging' => 
-  array (
+  'logging' =>
+  array(
     'default' => 'stack',
-    'channels' => 
-    array (
-      'stack' => 
-      array (
+    'channels' =>
+    array(
+      'stack' =>
+      array(
         'driver' => 'stack',
-        'channels' => 
-        array (
+        'channels' =>
+        array(
           0 => 'single',
         ),
         'ignore_exceptions' => false,
       ),
-      'single' => 
-      array (
+      'single' =>
+      array(
         'driver' => 'single',
-        'path' => 'D:\\wamp3.3\\www\\hello\\core\\storage\\logs/laravel.log',
+        'path' => 'D:\\laragon\\www\\hello\\core\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
-      'daily' => 
-      array (
+      'daily' =>
+      array(
         'driver' => 'daily',
-        'path' => 'D:\\wamp3.3\\www\\hello\\core\\storage\\logs/laravel.log',
+        'path' => 'D:\\laragon\\www\\hello\\core\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
-      'slack' => 
-      array (
+      'slack' =>
+      array(
         'driver' => 'slack',
         'url' => NULL,
         'username' => 'Laravel Log',
         'emoji' => ':boom:',
         'level' => 'debug',
       ),
-      'papertrail' => 
-      array (
+      'papertrail' =>
+      array(
         'driver' => 'monolog',
         'level' => 'debug',
         'handler' => 'Monolog\\Handler\\SyslogUdpHandler',
-        'handler_with' => 
-        array (
+        'handler_with' =>
+        array(
           'host' => NULL,
           'port' => NULL,
         ),
       ),
-      'stderr' => 
-      array (
+      'stderr' =>
+      array(
         'driver' => 'monolog',
         'level' => 'debug',
         'handler' => 'Monolog\\Handler\\StreamHandler',
         'formatter' => NULL,
-        'with' => 
-        array (
+        'with' =>
+        array(
           'stream' => 'php://stderr',
         ),
       ),
-      'syslog' => 
-      array (
+      'syslog' =>
+      array(
         'driver' => 'syslog',
         'level' => 'debug',
       ),
-      'errorlog' => 
-      array (
+      'errorlog' =>
+      array(
         'driver' => 'errorlog',
         'level' => 'debug',
       ),
-      'null' => 
-      array (
+      'null' =>
+      array(
         'driver' => 'monolog',
         'handler' => 'Monolog\\Handler\\NullHandler',
       ),
-      'emergency' => 
-      array (
-        'path' => 'D:\\wamp3.3\\www\\hello\\core\\storage\\logs/laravel.log',
+      'emergency' =>
+      array(
+        'path' => 'D:\\laragon\\www\\hello\\core\\storage\\logs/laravel.log',
       ),
     ),
   ),
-  'mail' => 
-  array (
+  'mail' =>
+  array(
     'default' => 'smtp',
-    'mailers' => 
-    array (
-      'smtp' => 
-      array (
+    'mailers' =>
+    array(
+      'smtp' =>
+      array(
         'transport' => 'smtp',
         'host' => 'mailhog',
         'port' => '1025',
@@ -507,66 +503,66 @@
         'timeout' => NULL,
         'auth_mode' => NULL,
       ),
-      'ses' => 
-      array (
+      'ses' =>
+      array(
         'transport' => 'ses',
       ),
-      'mailgun' => 
-      array (
+      'mailgun' =>
+      array(
         'transport' => 'mailgun',
       ),
-      'postmark' => 
-      array (
+      'postmark' =>
+      array(
         'transport' => 'postmark',
       ),
-      'sendmail' => 
-      array (
+      'sendmail' =>
+      array(
         'transport' => 'sendmail',
         'path' => '/usr/sbin/sendmail -bs',
       ),
-      'log' => 
-      array (
+      'log' =>
+      array(
         'transport' => 'log',
         'channel' => NULL,
       ),
-      'array' => 
-      array (
+      'array' =>
+      array(
         'transport' => 'array',
       ),
     ),
-    'from' => 
-    array (
+    'from' =>
+    array(
       'address' => NULL,
       'name' => 'Laravel',
     ),
-    'markdown' => 
-    array (
+    'markdown' =>
+    array(
       'theme' => 'default',
-      'paths' => 
-      array (
-        0 => 'D:\\wamp3.3\\www\\hello\\core\\resources\\views/vendor/mail',
+      'paths' =>
+      array(
+        0 => 'D:\\laragon\\www\\hello\\core\\resources\\views/vendor/mail',
       ),
     ),
   ),
-  'queue' => 
-  array (
+  'queue' =>
+  array(
     'default' => 'sync',
-    'connections' => 
-    array (
-      'sync' => 
-      array (
+    'connections' =>
+    array(
+      'sync' =>
+      array(
         'driver' => 'sync',
       ),
-      'database' => 
-      array (
+      'database' =>
+      array(
         'driver' => 'database',
         'table' => 'jobs',
         'queue' => 'default',
         'retry_after' => 90,
         'after_commit' => false,
       ),
-      'beanstalkd' => 
-      array (
+      'beanstalkd' =>
+      array(
         'driver' => 'beanstalkd',
         'host' => 'localhost',
         'queue' => 'default',
@@ -574,8 +570,8 @@
         'block_for' => 0,
         'after_commit' => false,
       ),
-      'sqs' => 
-      array (
+      'sqs' =>
+      array(
         'driver' => 'sqs',
         'key' => '',
         'secret' => '',
@@ -585,8 +581,8 @@
         'region' => 'us-east-1',
         'after_commit' => false,
       ),
-      'redis' => 
-      array (
+      'redis' =>
+      array(
         'driver' => 'redis',
         'connection' => 'default',
         'queue' => 'default',
@@ -595,65 +591,65 @@
         'after_commit' => false,
       ),
     ),
-    'failed' => 
-    array (
+    'failed' =>
+    array(
       'driver' => 'database-uuids',
       'database' => 'mysql',
       'table' => 'failed_jobs',
     ),
   ),
-  'sanctum' => 
-  array (
-    'stateful' => 
-    array (
+  'sanctum' =>
+  array(
+    'stateful' =>
+    array(
       0 => 'localhost',
       1 => 'localhost:3000',
       2 => '127.0.0.1',
       3 => '127.0.0.1:8000',
       4 => '::1localhost',
     ),
-    'guard' => 
-    array (
+    'guard' =>
+    array(
       0 => 'api',
     ),
     'expiration' => NULL,
-    'middleware' => 
-    array (
+    'middleware' =>
+    array(
       'verify_csrf_token' => 'App\\Http\\Middleware\\VerifyCsrfToken',
       'encrypt_cookies' => 'App\\Http\\Middleware\\EncryptCookies',
     ),
   ),
-  'services' => 
-  array (
-    'mailgun' => 
-    array (
+  'services' =>
+  array(
+    'mailgun' =>
+    array(
       'domain' => NULL,
       'secret' => NULL,
       'endpoint' => 'api.mailgun.net',
     ),
-    'postmark' => 
-    array (
+    'postmark' =>
+    array(
       'token' => NULL,
     ),
-    'ses' => 
-    array (
+    'ses' =>
+    array(
       'key' => '',
       'secret' => '',
       'region' => 'us-east-1',
     ),
   ),
-  'session' => 
-  array (
+  'session' =>
+  array(
     'driver' => 'file',
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'D:\\wamp3.3\\www\\hello\\core\\storage\\framework/sessions',
+    'files' => 'D:\\laragon\\www\\hello\\core\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
-    'lottery' => 
-    array (
+    'lottery' =>
+    array(
       0 => 2,
       1 => 100,
     ),
@@ -665,27 +661,27 @@
     'same_site' => 'lax',
   ),
   'timezone' => 1,
-  'view' => 
-  array (
-    'paths' => 
-    array (
-      0 => 'D:\\wamp3.3\\www\\hello\\core\\resources\\views',
+  'view' =>
+  array(
+    'paths' =>
+    array(
+      0 => 'D:\\laragon\\www\\hello\\core\\resources\\views',
     ),
-    'compiled' => 'D:\\wamp3.3\\www\\hello\\core\\storage\\framework\\views',
+    'compiled' => 'D:\\laragon\\www\\hello\\core\\storage\\framework\\views',
   ),
-  'debugbar' => 
-  array (
+  'debugbar' =>
+  array(
     'enabled' => NULL,
-    'except' => 
-    array (
+    'except' =>
+    array(
       0 => 'telescope*',
       1 => 'horizon*',
     ),
-    'storage' => 
-    array (
+    'storage' =>
+    array(
       'enabled' => true,
       'driver' => 'file',
-      'path' => 'D:\\wamp3.3\\www\\hello\\core\\storage\\debugbar',
+      'path' => 'D:\\laragon\\www\\hello\\core\\storage\\debugbar',
       'connection' => NULL,
       'provider' => '',
       'hostname' => '127.0.0.1',
@@ -699,8 +695,8 @@
     'add_ajax_timing' => false,
     'error_handler' => false,
     'clockwork' => false,
-    'collectors' => 
-    array (
+    'collectors' =>
+    array(
       'phpinfo' => true,
       'messages' => true,
       'time' => true,
@@ -725,51 +721,50 @@
       'models' => true,
       'livewire' => true,
     ),
-    'options' => 
-    array (
-      'auth' => 
-      array (
+    'options' =>
+    array(
+      'auth' =>
+      array(
         'show_name' => true,
       ),
-      'db' => 
-      array (
+      'db' =>
+      array(
         'with_params' => true,
         'backtrace' => true,
-        'backtrace_exclude_paths' => 
-        array (
-        ),
+        'backtrace_exclude_paths' =>
+        array(),
         'timeline' => false,
         'duration_background' => true,
-        'explain' => 
-        array (
+        'explain' =>
+        array(
           'enabled' => false,
-          'types' => 
-          array (
+          'types' =>
+          array(
             0 => 'SELECT',
           ),
         ),
         'hints' => false,
         'show_copy' => false,
       ),
-      'mail' => 
-      array (
+      'mail' =>
+      array(
         'full_log' => false,
       ),
-      'views' => 
-      array (
+      'views' =>
+      array(
         'timeline' => false,
         'data' => false,
       ),
-      'route' => 
-      array (
+      'route' =>
+      array(
         'label' => true,
       ),
-      'logs' => 
-      array (
+      'logs' =>
+      array(
         'file' => NULL,
       ),
-      'cache' => 
-      array (
+      'cache' =>
+      array(
         'values' => true,
       ),
     ),
@@ -779,25 +774,24 @@
     'theme' => 'auto',
     'debug_backtrace_limit' => 50,
   ),
-  'querydetector' => 
-  array (
+  'querydetector' =>
+  array(
     'enabled' => NULL,
     'threshold' => 1,
-    'except' => 
-    array (
-    ),
+    'except' =>
+    array(),
     'log_channel' => 'daily',
-    'output' => 
-    array (
+    'output' =>
+    array(
       0 => 'BeyondCode\\QueryDetector\\Outputs\\Alert',
       1 => 'BeyondCode\\QueryDetector\\Outputs\\Log',
     ),
   ),
-  'flare' => 
-  array (
+  'flare' =>
+  array(
     'key' => NULL,
-    'reporting' => 
-    array (
+    'reporting' =>
+    array(
       'anonymize_ips' => true,
       'collect_git_information' => false,
       'report_queries' => true,
@@ -807,25 +801,25 @@
       'grouping_type' => NULL,
       'report_logs' => true,
       'maximum_number_of_collected_logs' => 200,
-      'censor_request_body_fields' => 
-      array (
+      'censor_request_body_fields' =>
+      array(
         0 => 'password',
       ),
     ),
     'send_logs_as_events' => true,
-    'censor_request_body_fields' => 
-    array (
+    'censor_request_body_fields' =>
+    array(
       0 => 'password',
     ),
   ),
-  'ignition' => 
-  array (
+  'ignition' =>
+  array(
     'editor' => 'phpstorm',
     'theme' => 'light',
     'enable_share_button' => true,
     'register_commands' => false,
-    'ignored_solution_providers' => 
-    array (
+    'ignored_solution_providers' =>
+    array(
       0 => 'Facade\\Ignition\\SolutionProviders\\MissingPackageSolutionProvider',
     ),
     'enable_runnable_solutions' => NULL,
@@ -833,25 +827,23 @@
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
   ),
-  'trustedproxy' => 
-  array (
+  'trustedproxy' =>
+  array(
     'proxies' => NULL,
     'headers' => 30,
   ),
-  'mollie' => 
-  array (
+  'mollie' =>
+  array(
     'key' => 'test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
   ),
-  'tinker' => 
-  array (
-    'commands' => 
-    array (
-    ),
-    'alias' => 
-    array (
-    ),
-    'dont_alias' => 
-    array (
+  'tinker' =>
+  array(
+    'commands' =>
+    array(),
+    'alias' =>
+    array(),
+    'dont_alias' =>
+    array(
       0 => 'App\\Nova',
     ),
   ),

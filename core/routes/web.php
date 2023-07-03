@@ -25,7 +25,7 @@ Route::get('/clear-cache', function () {
 |--------------------------------------------------------------------------
  */
 
-Route::namespace ('Gateway')->prefix('ipn')->name('ipn.')->group(function () {
+Route::namespace('Gateway')->prefix('ipn')->name('ipn.')->group(function () {
     Route::post('paypal', 'Paypal\ProcessController@ipn')->name('Paypal');
     Route::get('paypal-sdk', 'PaypalSdk\ProcessController@ipn')->name('PaypalSdk');
     Route::post('perfect-money', 'PerfectMoney\ProcessController@ipn')->name('PerfectMoney');
@@ -69,8 +69,8 @@ Route::prefix('ticket')->group(function () {
 |--------------------------------------------------------------------------
  */
 
-Route::namespace ('Admin')->prefix('admin')->name('admin.')->group(function () {
-    Route::namespace ('Auth')->group(function () {
+Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
+    Route::namespace('Auth')->group(function () {
         Route::get('/', 'LoginController@showLoginForm')->name('login');
         Route::post('/', 'LoginController@login')->name('login');
         Route::get('logout', 'LoginController@logout')->name('logout');
@@ -83,7 +83,7 @@ Route::namespace ('Admin')->prefix('admin')->name('admin.')->group(function () {
     });
 
     Route::middleware('admin')->group(function () {
-        
+
 
 
 
@@ -166,18 +166,18 @@ Route::namespace ('Admin')->prefix('admin')->name('admin.')->group(function () {
             Route::get('/edit/{id}', 'ProductController@edit')->name('edit');
             Route::post('/update/{id}', 'ProductController@update')->name('update');
             Route::get('digital/file/{id}', 'ProductController@digitalFileDownload')->name('digital.file.download');
-            Route::get('/gallery/{id}','ProductController@gallery')->name('gallery');
-            Route::post('/addgallery','ProductController@addgallery')->name('addgallery');
-            Route::post('/review/remove/{id}','ProductController@reviewRemove')->name('review.remove');
-            Route::get('/today-deals/products',"ProductController@todayDeals")->name('todayDeal');
-            Route::post('/today-deals/discount',"ProductController@todayDealsDiscount")->name('today.deal');
+            Route::get('/gallery/{id}', 'ProductController@gallery')->name('gallery');
+            Route::post('/addgallery', 'ProductController@addgallery')->name('addgallery');
+            Route::post('/review/remove/{id}', 'ProductController@reviewRemove')->name('review.remove');
+            Route::get('/today-deals/products', "ProductController@todayDeals")->name('todayDeal');
+            Route::post('/today-deals/discount', "ProductController@todayDealsDiscount")->name('today.deal');
         });
 
-        
-        
+
+
 
         // coupon
-        Route::prefix('coupon')->name('coupon.')->group(function(){
+        Route::prefix('coupon')->name('coupon.')->group(function () {
             Route::get('index', 'CouponController@index')->name('index');
             Route::post('store/{id?}', 'CouponController@store')->name('store');
             Route::get('delete/{id}', 'CouponController@delete')->name('delete');
@@ -412,14 +412,13 @@ Route::name('user.')->prefix('user')->group(function () {
 
             Route::get('/my/orders', 'OrderController@orderHistory')->name('order.history');
             Route::get('/order/detail/{id}', 'OrderController@orderDetail')->name('order.detail');
-            Route::get('digital/file/download/{id}/{order_id}','OrderController@fileDownload')->name('digital.file.download');
+            Route::get('digital/file/download/{id}/{order_id}', 'OrderController@fileDownload')->name('digital.file.download');
 
-            Route::get('review/products/','ReviewProductController@reviewProducts')->name('review.products');
-            Route::get('review/create/{id}/{name}','ReviewProductController@reviewCreate')->name('review.create');
-            Route::post('review/store/{id}','ReviewProductController@reviewStore')->name('review.store');
+            Route::get('review/products/', 'ReviewProductController@reviewProducts')->name('review.products');
+            Route::get('review/create/{id}/{name}', 'ReviewProductController@reviewCreate')->name('review.create');
+            Route::post('review/store/{id}', 'ReviewProductController@reviewStore')->name('review.store');
 
-            Route::get('/payment/history','UserController@paymentHistory')->name('payment.history');
-
+            Route::get('/payment/history', 'UserController@paymentHistory')->name('payment.history');
         });
     });
 });
@@ -439,7 +438,7 @@ Route::get('placeholder-image/{size}', 'SiteController@placeholderImage')->name(
 Route::get('/', 'SiteController@index')->name('home');
 Route::post('/fetchModels', 'SiteController@fetchModels')->name('fetchModels');
 Route::post('/searchModels', 'SiteController@searchModels')->name('searchModels');
-Route::get('/productdetails', 'SiteController@details')->name('details');
+Route::get('/productdetails/{id}', 'SiteController@details')->name('details');
 
 
 
@@ -470,8 +469,8 @@ Route::get('/all/product/filter', 'SiteController@productsFilter')->name('all.pr
 
 Route::get('product/detail/{id}/{name}', 'SiteController@productDetail')->name('product.detail');
 
-Route::get('/track/order','SiteController@trackOrder')->name('track-order');
-Route::post('get/track/order','SiteController@getTrackOrder')->name('get.track-order');
+Route::get('/track/order', 'SiteController@trackOrder')->name('track-order');
+Route::post('get/track/order', 'SiteController@getTrackOrder')->name('get.track-order');
 
 Route::get('/product/quickView', 'SiteController@quickView')->name('product.quickView');
 
