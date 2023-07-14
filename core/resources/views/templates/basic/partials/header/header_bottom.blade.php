@@ -1,7 +1,7 @@
 <div class="header-bottom bg--section py-2">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xxl-2 col-xl-2 p-rel">
+            <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-12 p-rel">
                 <div class="logo">
                     <a href="{{ route('home') }}">
                         <img src="{{ asset('assets/images/logo.png') }}" alt="@lang('logo')">
@@ -9,7 +9,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-xxl-6 col-xl-6">
+            <div class="col-xxl-6 col-xl-6 col-lg-5 order-lg-2 col-md-6 order-md-2">
                 <ul class="menu  @if (request()->routeIs('home')) me-lg-auto @endif">
                     <li>
                         <a href="{{ route('home') }}" class="{{ menuActive('home') }}">
@@ -21,7 +21,7 @@
                             Stock 
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Current Stock</a></li>
+                            <li><a class="dropdown-item" href="{{ url('all/products') }}">Current Stock</a></li>
                             <li><a class="dropdown-item" href="#">Old Stock</a></li>                            
                         </ul>
                     </li>
@@ -47,7 +47,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-xxl-2 col-xl-2">
+            <div class="col-xxl-2 col-xl-2 col-lg-2 order-lg-3 col-md-3 order-md-1">
                 <div class="rating">
                     <a href="{{ route('home') }}">
                         <img src="{{ asset('assets/images/autotrader_alt.png') }}" alt="">
@@ -55,7 +55,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-xxl-2 col-xl-2 col-lg-2">
+            <div class="col-xxl-2 col-xl-2 col-lg-3 col-md-3 order-md-last">
                 <div class="contact">
                     <ul>
                         <li>

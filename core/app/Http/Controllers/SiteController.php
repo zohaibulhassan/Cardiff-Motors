@@ -48,7 +48,7 @@ class SiteController extends Controller
 
 
     public function searchModels(Request $request)
-    {
+    {      
         $brands = Brand::all();
         $categories = Category::all();
         $pageTitle = "Products";
@@ -72,6 +72,8 @@ class SiteController extends Controller
     }
     public function details($id)
     {
+        $brands = Brand::all();
+        $categories = Category::all();
         $product = Product::find($id);
         $product['gallery'] = ProductGallery::all()->where('product_id', $id);
         $product['specification'] = specifications::all()->where('product_id', $id);
@@ -80,7 +82,7 @@ class SiteController extends Controller
 
 
         $pageTitle = "Product Details";
-        return view($this->activeTemplate . 'details', compact('pageTitle',  'product',));
+        return view($this->activeTemplate . 'details', compact('pageTitle', 'product', 'brands', 'categories'));
     }
 
 

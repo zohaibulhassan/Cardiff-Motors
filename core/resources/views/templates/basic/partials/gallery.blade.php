@@ -1,5 +1,6 @@
 <div class="gallery">
-<div class="app">
+    <h2>Social Media Gallery</h2>
+    <div class="app">
         
         <div class="cardList">
             <button class="cardList__btn btn btn--left">
@@ -43,21 +44,21 @@
         <div class="infoList">
             <div class="info__wrapper">
                 <div class="info current--info">
-                    <h1 class="text name">Highlands</h1>
-                    <h4 class="text location">Scotland</h4>
-                    <p class="text description">The mountains are calling</p>
+                    <h1 class="text name"></h1>
+                    <h4 class="text location"></h4>
+                    <p class="text description"></p>
                 </div>
     
                 <div class="info next--info">
-                    <h1 class="text name">Machu Pichu</h1>
-                    <h4 class="text location">Peru</h4>
-                    <p class="text description">Adventure is never far away</p>
+                    <h1 class="text name"></h1>
+                    <h4 class="text location"></h4>
+                    <p class="text description"></p>
                 </div>
     
                 <div class="info previous--info">
-                    <h1 class="text name">Chamonix</h1>
-                    <h4 class="text location">France</h4>
-                    <p class="text description">Let your dreams come true</p>
+                    <h1 class="text name"></h1>
+                    <h4 class="text location"></h4>
+                    <p class="text description"></p>
                 </div>                
             </div>
         </div>

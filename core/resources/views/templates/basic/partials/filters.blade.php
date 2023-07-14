@@ -4,9 +4,13 @@
             <div class="col-xxl-12 col-xl-12">
                 <div class="form">
                     <form action="{{url('/searchModels')}}" method="post">
+                        @csrf
                         <div class="select">
                             <select class="form-control" name="make" id="make">
-                                <option value="">--Make--</option>               
+                                <option value="">--Make--</option>         
+                                @foreach($brands as $brand)
+                                <option value="{{$brand->id}}">{{$brand->name}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="select">
@@ -35,7 +39,7 @@
                               </select>
                         </div>
                         <button type="submit">Find Vehicle</button>
-                        @csrf
+                        
                     </form>
                 </div>
             </div>
