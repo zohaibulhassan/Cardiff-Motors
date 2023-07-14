@@ -115,9 +115,9 @@ $policyPages = getContent('policy_pages.element', false, null, true);
                     @lang('Copyright') &copy; @lang('All Right Reserved by') 
                     {{__($general->sitename)}}
                 </div>
-                <div class="policy-page">
+                <!-- <div class="policy-page">
                     <img src="{{ asset('assets/images/payment-method.png') }}" alt="">
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
